@@ -23,18 +23,16 @@ public class BookData implements BookMVP.Model {
         call.enqueue(new Callback<ArrayList<Book>>() {
             @Override
             public void onResponse(Call<ArrayList<Book>> call, Response<ArrayList<Book>> response) {
-                ArrayList<Book> bookList = response.body();
 
-//                TODO Uncomment line below after implemeting Presenter
-//                onDataLoadingListener.onDataLoaded(bookList);
+                ArrayList<Book> bookList = response.body();
+                onDataLoadingListener.onDataLoaded(bookList);
             }
 
             @Override
             public void onFailure(Call<ArrayList<Book>> call, Throwable throwable) {
-                Log.d(TAG, throwable.toString());
 
-//                TODO Uncomment line below after implemeting Presenter
-//                onDataLoadingListener.onLoadingFailure();
+                Log.d(TAG, throwable.toString());
+                onDataLoadingListener.onLoadingFailure();
 
             }
         });

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Desafio_Livox</string>
+    <string name="message_error">Erro ao carregar dados! Por favor, verifique sua conexã.</string>
 </resources>
