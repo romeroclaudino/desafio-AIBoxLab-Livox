@@ -1,24 +1,22 @@
 package com.aiboxlab.desafio_livox.model.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Book {
-
-    private class PublishedDate{
-        Date $date;
-    }
+public class Book implements Serializable {
+    public static final String KEY = "BOOK";
 
     private String title;
     private String isbn;
     private int pageCount;
-    private PublishedDate publishedDate;
     private String thumbnailUrl;
     private String shortDescription;
     private String longDescription;
     private String status;
     private ArrayList<String> authors;
     private ArrayList<String> categories;
+    private PublishedDate publishedDate;
 
     public String getTitle() {
         return title;
@@ -42,14 +40,6 @@ public class Book {
 
     public void setPageCount(int pageCount) {
         this.pageCount = pageCount;
-    }
-
-    public Date getPublishedDate() {
-        return publishedDate.$date;
-    }
-
-    public void setPublishedDate(Date date){
-        publishedDate.$date = date;
     }
 
     public String getThumbnailUrl() {
@@ -98,5 +88,17 @@ public class Book {
 
     public void setCategories(ArrayList<String> categories) {
         this.categories = categories;
+    }
+
+    public Date getPublishedDate() {
+        return publishedDate.$date;
+    }
+
+    public void setPublishedDate(Date date){
+        publishedDate.$date = date;
+    }
+
+    private class PublishedDate implements Serializable{
+        Date $date;
     }
 }

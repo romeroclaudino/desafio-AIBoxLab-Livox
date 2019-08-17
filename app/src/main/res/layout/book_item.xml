@@ -7,11 +7,10 @@
 
     <ImageView
         android:id="@+id/lv_item_img_cover"
-        android:paddingStart="@dimen/small_padding"
+        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_weight="3" />
 
     <LinearLayout
         android:paddingStart="@dimen/small_padding"
@@ -25,6 +24,7 @@
             android:id="@+id/lv_item_txt_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_dark"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             tool:text="Title"
             style="@style/long_text"/>
